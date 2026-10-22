@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="description" content="A special birthday surprise for Little Snorlax">
+    <meta name="keywords" content="birthday, surprise, Little Snorlax, celebration">
+    <meta property="og:title" content="Happy Birthday Little Snorlax">
+    <meta property="og:description" content="A special birthday surprise just for you.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://yourdomain.com/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title>Happy Birthday Little Snorlax 💝</title>
+    <link rel="icon" type="image/jpeg" href="image/icon.jpeg">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff6eb4">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Dancing+Script:wght@600;700&family=Pacifico&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <link rel="preload" href="styles.min.css" as="style" onload='this.onload=null,this.rel="stylesheet"'><noscript>
+        <link rel="stylesheet" href="styles.min.css">
+    </noscript>
+</head>
+
+<body>
+    <div id="butterfly-layer"></div>
+    <div id="page-lock" class="page"><img loading="lazy" src="image/background/lock_back.png" alt="Lock Page Background"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1">
+        <div id="particles"></div>
+        <div class="top-banner">
+            <h1>✨ Happy Birthday Little Snorlax 🎂💝</h1>
+            <p>Hey You Know What! You're the most adorable human I ever met! 🌸💖</p>
+        </div>
+        <div class="main-wrapper">
+            <div class="image-card"><span class="sakura-deco">🌸</span> <span class="sakura-deco">💮</span> <span
+                    class="sakura-deco">🌺</span> <span class="sakura-deco">✨</span>
+                <div class="image-frame">
+                    <div class="image-badge">💌 This is for You, Little Snorlax ~</div><img loading="lazy"
+                        src="image/anime-boy-holding-a-cake-with-cherry-blossoms-in-front-of-him-generative-ai-photo.jpg"
+                        alt="Anime boy with birthday cake and cherry blossoms">
+                </div>
+            </div>
+            <div class="password-card" id="pwdCard">
+                <div class="mascot-wrap"><img loading="lazy" src="image/anime_girl_surprise.png"
+                        alt="Cute sticker emojis" style="border-radius:50px;width:110px"></div>
+                <div class="stars-row">⭐ 🌟 💫 ✨ 💫 🌟 ⭐</div>
+                <h2 class="card-title">Secret Garden 🔐</h2>
+                <p class="card-subtitle">~ Enter the magic password to unlock your surprise ~</p>
+                <div class="hint-bubble">🌸 Psst! The password is something only <strong>you</strong> would
+                    know~<br>Think about your special moments 💕</div>
+                <div class="passcode-container">
+                    <div class="passcode-dots" id="passcodeDots">
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                        <div class="passcode-dot"></div>
+                    </div>
+                    <div class="passcode-keypad"><button aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("1")'>1<span></span></button> <button aria-label="Button"
+                            class="keypad-btn" onclick='handleKeyPress("2")'>2<span>💗</span></button> <button
+                            aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("3")'>3<span>💝</span></button> <button aria-label="Button"
+                            class="keypad-btn" onclick='handleKeyPress("4")'>4<span>😍</span></button> <button
+                            aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("5")'>5<span>💌</span></button> <button aria-label="Button"
+                            class="keypad-btn" onclick='handleKeyPress("6")'>6<span>🥰</span></button> <button
+                            aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("7")'>7<span>🌻</span></button> <button aria-label="Button"
+                            class="keypad-btn" onclick='handleKeyPress("8")'>8<span>😘</span></button> <button
+                            aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("9")'>9<span>💓</span></button> <button aria-label="Button"
+                            class="keypad-btn empty"></button> <button aria-label="Button" class="keypad-btn"
+                            onclick='handleKeyPress("0")'>0<span></span></button> <button aria-label="Button"
+                            class="keypad-btn action" onclick="handleKeyDelete()">⌫</button></div>
+                </div>
+                <div id="errorMsg" class="msg-box msg-error">😢 Aww, that's not it~ Try again, cutie! 💗</div>
+                <div id="successMsg" class="msg-box msg-success">🎉 Yayy~! Welcome! Opening your surprise... 💖🎂</div>
+                <div class="hearts-row">💗 💓 💗 💓 💗 💓 💗</div>
+            </div>
+        </div>
+    </div>
+    <div id="page-surprise" class="page"><img loading="lazy" src="image/background/back_4.jpg"
+            alt="Surprise Page Background"
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1">
+        <div class="s-header">
+            <h1 class="s-title">Happy Birthday Little Snorlax!</h1>
+            <p class="s-tagline">🌸 A collection of smiles, laughter, and unforgettable memories. 💕</p>
+            <div class="s-hearts">💗 💓 💗 💓 💗 💓 💗</div>
+        </div>
+        <div class="moments-section">
+            <div class="moments-header">
+                <h2 class="moments-title">Your Beautiful Moments</h2>
+            </div>
+            <div class="moments-cards-row">
+                <div class="moment-card">
+                    <div class="moment-img-wrap moment-img-wrap-contain"><img loading="lazy"
+                            src="image/Image Birthday Girl or Boy/img1.jpeg" alt="Her Smile"
+                            style="mix-blend-mode:multiply"></div>
+                    <div class="moment-card-body">
+                        <h3 class="moment-card-title">Your Smile Says It All</h3>
+                        <p class="moment-card-text">You're truly one of the sweetest girls I know, and I feel lucky to
+                            have a friend like you. ❤️</p>
+                    </div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-img-wrap moment-img-wrap-contain"><img loading="lazy"
+                            src="image/Image Birthday Girl or Boy/img2.jpeg" alt="Together Vibes"
+                            style="mix-blend-mode:multiply"></div>
+                    <div class="moment-card-body">
+                        <h3 class="moment-card-title">Together Vibes</h3>
+                        <p class="moment-card-text">May your journey ahead be filled with happiness, success, and
+                            endless smiles. 🤩 💕</p>
+                    </div>
+                </div>
+                <div class="moment-card">
+                    <div class="moment-img-wrap moment-img-wrap-contain"><img loading="lazy"
+                            src="image/Image Birthday Girl or Boy/img3.jpeg" alt="Pretty Soul"></div>
+                    <div class="moment-card-body">
+                        <h3 class="moment-card-title">Pretty Soul</h3>
+                        <p class="moment-card-text">Keep being the amazing person you are — you make every moment
+                            brighter. 🌸 💖</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="surprise-grid">
+            <div class="col-left">
+                <div class="video-box">
+                    <div class="video-label">🎬 A Special Message Just For You 💌</div><video
+                        poster="image/background/lock_back.png" preload="metadata" id="birthdayVideo"
+                        class="birthday-video" controls playsinline src="image/happy birthday wish.mp4">Your browser
+                        does not support HTML5 video.</video>
+                </div>
+            </div>
+            <div class="col-right">
+                <div class="right-photo-box"><span class="right-deco">🌸</span> <span class="right-deco">💮</span> <span
+                        class="right-deco">✨</span> <span class="right-deco">🌺</span>
+                    <div class="right-photo-frame"><img loading="lazy" src="image/gif/gif7.gif"
+                            alt="Surprise for Little Snorlax"></div>
+                </div>
+                <div class="cutey-bubble">This WebSide Made only For You 💖, Little Snorlax ~ Happy 20th Birthday 🎂
+                </div>
+                <div class="btn-group"><button aria-label="Button" class="btn-letter" id="loveMsgBtn"
+                        onclick="openLoveLetter()"><span class="letter-icon">💌</span> &nbsp;Read My Letter~ 🌸</button>
+                    <button aria-label="Button" class="btn-next" id="nextSurpriseBtn"
+                        onclick="triggerNextSurprise()"><span class="btn-icon">🎁</span> Next Surprise~ <span
+                            class="btn-icon">🎀</span></button>
+                </div>
+            </div>
+            <div class="col-center" style="justify-content:center;margin-top:50px">
+                <div style="display:flex;flex-direction:column;align-items:center;gap:30px">
+                    <div style="animation:floatCard 3.5s ease-in-out infinite;max-width:160px"><img loading="lazy"
+                            src="image/gif/gif2.gif" alt="Cute Bear Animation" style="width:100%;border-radius:16px">
+                    </div>
+                    <div style="animation:floatCard 3.5s ease-in-out infinite;animation-delay:.8s;max-width:160px"><img
+                            loading="lazy" src="image/gif/gif2.jpg" alt="Cute Bear Animation"
+                            style="width:100%;border-radius:16px"></div>
+                </div>
+            </div>
+        </div>
+        <div class="s-footer">This WebSide Made only For You 💖, Little Snorlax ~ Happy 20th Birthday 🎂</div>
+    </div>
+    <div id="page-three" class="page"><video poster="image/background/lock_back.png" id="p3BgVid" preload="metadata"
+            loop muted playsinline
+            style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1">
+            <source src="image/background/back_3.mp4" type="video/mp4">
+        </video>
+        <div class="p3-header">
+            <h1 class="p3-title">A Special Birthday Gift 🎁</h1>
+            <p class="p3-subtitle">✨ ~ Because You Deserve The Whole World, Little Snorlax ~ 🌸💖</p>
+            <div class="p3-hearts">💗 💓 💖 💝 💖 💓 💗</div>
+        </div>
+        <div class="p3-body">
+            <div class="cake-row">
+                <div class="cake-section">
+                    <div class="cake-label">Happy 20th Birthday, Little Snorlax! 🥳</div>
+                    <div class="svg-cake-wrap" id="cakeWrap">
+                        <div id="knifeCursor" class="knife-cursor" aria-hidden="true">🔪</div><svg id="cakeSVG"
+                            class="cake-svg" viewBox="0 0 340 320" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <radialGradient id="plateGrad" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#fff9fe" />
+                                    <stop offset="100%" stop-color="#f0d6ec" />
+                                </radialGradient>
+                                <radialGradient id="cakeTop" cx="50%" cy="30%" r="60%">
+                                    <stop offset="0%" stop-color="#fff0f8" />
+                                    <stop offset="100%" stop-color="#ffcce8" />
+                                </radialGradient>
+                                <linearGradient id="layer1" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#ffb3d9" />
+                                    <stop offset="100%" stop-color="#ff6eb4" />
+                                </linearGradient>
+                                <linearGradient id="layer2" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#ffd6ec" />
+                                    <stop offset="100%" stop-color="#ffaad6" />
+                                </linearGradient>
+                                <linearGradient id="layer3" x1="0" y1="0" x2="0" y2="1">
+                                    <stop offset="0%" stop-color="#c9a7f5" />
+                                    <stop offset="100%" stop-color="#9b6ee0" />
+                                </linearGradient>
+                                <filter id="glow">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feMerge>
+                                        <feMergeNode in="blur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                                <filter id="flameGlow">
+                                    <feGaussianBlur stdDeviation="4" result="blur" />
+                                    <feMerge>
+                                        <feMergeNode in="blur" />
+                                        <feMergeNode in="SourceGraphic" />
+                                    </feMerge>
+                                </filter>
+                            </defs>
+                            <ellipse cx="170" cy="290" rx="140" ry="18" fill="url(#plateGrad)" stroke="#e8b4d8"
+                                stroke-width="2" />
+                            <ellipse cx="170" cy="245" rx="118" ry="14" fill="#b57ee8" />
+                            <rect x="52" y="215" width="236" height="34" rx="6" fill="url(#layer3)" />
+                            <ellipse cx="170" cy="215" rx="118" ry="14" fill="#c9a7f5" />
+                            <ellipse cx="90" cy="218" rx="12" ry="7" fill="#e2c8ff" />
+                            <ellipse cx="140" cy="216" rx="10" ry="6" fill="#e2c8ff" />
+                            <ellipse cx="200" cy="217" rx="11" ry="6" fill="#e2c8ff" />
+                            <ellipse cx="250" cy="219" rx="9" ry="6" fill="#e2c8ff" />
+                            <ellipse cx="170" cy="210" rx="106" ry="13" fill="#ff96ca" />
+                            <rect x="64" y="175" width="212" height="38" rx="6" fill="url(#layer2)" />
+                            <ellipse cx="170" cy="175" rx="106" ry="13" fill="#ffd6ec" />
+                            <ellipse cx="95" cy="178" rx="11" ry="6" fill="#fff0f8" />
+                            <ellipse cx="145" cy="176" rx="9" ry="5" fill="#fff0f8" />
+                            <ellipse cx="195" cy="177" rx="10" ry="5" fill="#fff0f8" />
+                            <ellipse cx="245" cy="179" rx="8" ry="5" fill="#fff0f8" />
+                            <ellipse cx="170" cy="170" rx="94" ry="12" fill="#ff4da6" />
+                            <rect x="76" y="130" width="188" height="43" rx="6" fill="url(#layer1)" />
+                            <ellipse cx="170" cy="130" rx="94" ry="12" fill="url(#cakeTop)" />
+                            <ellipse cx="100" cy="133" rx="10" ry="6" fill="#fff" />
+                            <ellipse cx="148" cy="131" rx="9" ry="5" fill="#fff" />
+                            <ellipse cx="196" cy="132" rx="8" ry="5" fill="#fff" />
+                            <ellipse cx="240" cy="134" rx="9" ry="6" fill="#fff" /><text x="105" y="155" font-size="14"
+                                text-anchor="middle">🌸</text><text x="170" y="155" font-size="14"
+                                text-anchor="middle">💖</text><text x="235" y="155" font-size="14"
+                                text-anchor="middle">🌸</text><text x="170" y="200" font-size="11"
+                                font-family="Dancing Script,cursive" fill="#9b3080" text-anchor="middle"
+                                font-weight="700">Happy Birthday Little Snorlax!</text>
+                            <rect x="80" y="225" width="6" height="2" rx="1" fill="#ff6eb4"
+                                transform="rotate(-30 80 225)" />
+                            <rect x="110" y="232" width="6" height="2" rx="1" fill="#c9a7f5"
+                                transform="rotate(20 110 232)" />
+                            <rect x="145" y="228" width="6" height="2" rx="1" fill="#ffb3d9"
+                                transform="rotate(-10 145 228)" />
+                            <rect x="190" y="230" width="6" height="2" rx="1" fill="#ff6eb4"
+                                transform="rotate(40 190 230)" />
+                            <rect x="230" y="226" width="6" height="2" rx="1" fill="#c9a7f5"
+                                transform="rotate(-20 230 226)" />
+                            <rect x="260" y="233" width="6" height="2" rx="1" fill="#ffb3d9"
+                                transform="rotate(15 260 233)" />
+                            <rect x="118" y="95" width="10" height="36" rx="3" fill="#ffcce8" stroke="#ff6eb4"
+                                stroke-width="1" />
+                            <rect x="118" y="95" width="10" height="8" rx="1" fill="#ff9de2" opacity="0.5" />
+                            <line x1="123" y1="95" x2="123" y2="88" stroke="#333" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <g id="flame1" opacity="0">
+                                <ellipse cx="123" cy="82" rx="5" ry="8" fill="#ff6600" opacity="0.9" />
+                                <ellipse cx="123" cy="79" rx="3.5" ry="6" fill="#ffaa00" />
+                                <ellipse cx="123" cy="77" rx="2" ry="4" fill="#ffee66" />
+                                <ellipse cx="123" cy="76" rx="1" ry="2" fill="white" opacity="0.8" />
+                            </g>
+                            <rect x="138" y="88" width="10" height="43" rx="3" fill="#c9a7f5" stroke="#9b6ee0"
+                                stroke-width="1" />
+                            <rect x="138" y="88" width="10" height="8" rx="1" fill="#b57ee8" opacity="0.5" />
+                            <line x1="143" y1="88" x2="143" y2="81" stroke="#333" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <g id="flame2" opacity="0">
+                                <ellipse cx="143" cy="75" rx="5" ry="8" fill="#ff6600" opacity="0.9" />
+                                <ellipse cx="143" cy="72" rx="3.5" ry="6" fill="#ffaa00" />
+                                <ellipse cx="143" cy="70" rx="2" ry="4" fill="#ffee66" />
+                                <ellipse cx="143" cy="69" rx="1" ry="2" fill="white" opacity="0.8" />
+                            </g>
+                            <rect x="160" y="80" width="12" height="51" rx="3" fill="#ffb3d9" stroke="#ff6eb4"
+                                stroke-width="1" />
+                            <rect x="160" y="80" width="12" height="9" rx="1" fill="#ff9de2" opacity="0.5" />
+                            <line x1="166" y1="80" x2="166" y2="72" stroke="#333" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <g id="flame3" opacity="0">
+                                <ellipse cx="166" cy="66" rx="6" ry="9" fill="#ff6600" opacity="0.9" />
+                                <ellipse cx="166" cy="63" rx="4" ry="7" fill="#ffaa00" />
+                                <ellipse cx="166" cy="60" rx="2.5" ry="4.5" fill="#ffee66" />
+                                <ellipse cx="166" cy="59" rx="1.2" ry="2.5" fill="white" opacity="0.8" />
+                            </g>
+                            <rect x="186" y="88" width="10" height="43" rx="3" fill="#c9a7f5" stroke="#9b6ee0"
+                                stroke-width="1" />
+                            <rect x="186" y="88" width="10" height="8" rx="1" fill="#b57ee8" opacity="0.5" />
+                            <line x1="191" y1="88" x2="191" y2="81" stroke="#333" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <g id="flame4" opacity="0">
+                                <ellipse cx="191" cy="75" rx="5" ry="8" fill="#ff6600" opacity="0.9" />
+                                <ellipse cx="191" cy="72" rx="3.5" ry="6" fill="#ffaa00" />
+                                <ellipse cx="191" cy="70" rx="2" ry="4" fill="#ffee66" />
+                                <ellipse cx="191" cy="69" rx="1" ry="2" fill="white" opacity="0.8" />
+                            </g>
+                            <rect x="206" y="95" width="10" height="36" rx="3" fill="#ffcce8" stroke="#ff6eb4"
+                                stroke-width="1" />
+                            <rect x="206" y="95" width="10" height="8" rx="1" fill="#ff9de2" opacity="0.5" />
+                            <line x1="211" y1="95" x2="211" y2="88" stroke="#333" stroke-width="1.5"
+                                stroke-linecap="round" />
+                            <g id="flame5" opacity="0">
+                                <ellipse cx="211" cy="82" rx="5" ry="8" fill="#ff6600" opacity="0.9" />
+                                <ellipse cx="211" cy="79" rx="3.5" ry="6" fill="#ffaa00" />
+                                <ellipse cx="211" cy="77" rx="2" ry="4" fill="#ffee66" />
+                                <ellipse cx="211" cy="76" rx="1" ry="2" fill="white" opacity="0.8" />
+                            </g>
+                            <line id="cutLine" x1="170" y1="68" x2="170" y2="285" stroke="white" stroke-width="3"
+                                stroke-dasharray="8,4" opacity="0" />
+                            <g id="cakeLeftHalf" opacity="0"
+                                style="transition:transform .8s cubic-bezier(.25,.46,.45,.94)">
+                                <clipPath id="clipLeft">
+                                    <rect x="0" y="0" width="170" height="320" />
+                                </clipPath>
+                                <g clip-path="url(#clipLeft)">
+                                    <ellipse cx="170" cy="290" rx="140" ry="18" fill="url(#plateGrad)" stroke="#e8b4d8"
+                                        stroke-width="2" />
+                                    <ellipse cx="170" cy="245" rx="118" ry="14" fill="#b57ee8" />
+                                    <rect x="52" y="215" width="118" height="34" rx="0" fill="url(#layer3)" />
+                                    <ellipse cx="170" cy="215" rx="118" ry="14" fill="#c9a7f5" />
+                                    <ellipse cx="170" cy="210" rx="106" ry="13" fill="#ff96ca" />
+                                    <rect x="64" y="175" width="106" height="38" fill="url(#layer2)" />
+                                    <ellipse cx="170" cy="175" rx="106" ry="13" fill="#ffd6ec" />
+                                    <ellipse cx="170" cy="170" rx="94" ry="12" fill="#ff4da6" />
+                                    <rect x="76" y="130" width="94" height="43" fill="url(#layer1)" />
+                                    <ellipse cx="170" cy="130" rx="94" ry="12" fill="url(#cakeTop)" />
+                                    <rect x="167" y="130" width="6" height="43" fill="#fff8fc" />
+                                    <rect x="167" y="175" width="6" height="38" fill="#fff0f8" />
+                                    <rect x="167" y="215" width="6" height="34" fill="#fdf0ff" />
+                                </g>
+                            </g>
+                            <g id="cakeRightHalf" opacity="0"
+                                style="transition:transform .8s cubic-bezier(.25,.46,.45,.94)">
+                                <clipPath id="clipRight">
+                                    <rect x="170" y="0" width="170" height="320" />
+                                </clipPath>
+                                <g clip-path="url(#clipRight)">
+                                    <ellipse cx="170" cy="290" rx="140" ry="18" fill="url(#plateGrad)" stroke="#e8b4d8"
+                                        stroke-width="2" />
+                                    <ellipse cx="170" cy="245" rx="118" ry="14" fill="#b57ee8" />
+                                    <rect x="170" y="215" width="118" height="34" fill="url(#layer3)" />
+                                    <ellipse cx="170" cy="215" rx="118" ry="14" fill="#c9a7f5" />
+                                    <ellipse cx="170" cy="210" rx="106" ry="13" fill="#ff96ca" />
+                                    <rect x="170" y="175" width="106" height="38" fill="url(#layer2)" />
+                                    <ellipse cx="170" cy="175" rx="106" ry="13" fill="#ffd6ec" />
+                                    <ellipse cx="170" cy="170" rx="94" ry="12" fill="#ff4da6" />
+                                    <rect x="170" y="130" width="88" height="43" fill="url(#layer1)" />
+                                    <ellipse cx="170" cy="130" rx="94" ry="12" fill="url(#cakeTop)" />
+                                    <rect x="167" y="130" width="6" height="43" fill="#fff8fc" />
+                                    <rect x="167" y="175" width="6" height="38" fill="#fff0f8" />
+                                    <rect x="167" y="215" width="6" height="34" fill="#fdf0ff" />
+                                    <g id="fireGroup" opacity="0">
+                                        <ellipse cx="230" cy="100" rx="18" ry="28" fill="#ff4400" opacity="0.85">
+                                            <animate attributeName="ry" values="28;32;26;30;28" dur="0.7s"
+                                                repeatCount="indefinite" />
+                                            <animate attributeName="cy" values="100;96;102;98;100" dur="0.6s"
+                                                repeatCount="indefinite" />
+                                        </ellipse>
+                                        <ellipse cx="230" cy="94" rx="12" ry="20" fill="#ff8800">
+                                            <animate attributeName="ry" values="20;24;18;22;20" dur="0.55s"
+                                                repeatCount="indefinite" />
+                                            <animate attributeName="cx" values="230;232;228;231;230" dur="0.5s"
+                                                repeatCount="indefinite" />
+                                        </ellipse>
+                                        <ellipse cx="230" cy="89" rx="7" ry="13" fill="#ffcc00">
+                                            <animate attributeName="ry" values="13;16;11;14;13" dur="0.45s"
+                                                repeatCount="indefinite" />
+                                        </ellipse>
+                                        <ellipse cx="230" cy="86" rx="3.5" ry="7" fill="#fff9aa">
+                                            <animate attributeName="ry" values="7;9;6;8;7" dur="0.4s"
+                                                repeatCount="indefinite" />
+                                        </ellipse>
+                                        <circle cx="218" cy="110" r="2.5" fill="#ff6600" opacity="0.7">
+                                            <animate attributeName="cy" values="110;102;110" dur="1.2s"
+                                                repeatCount="indefinite" />
+                                            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="1.2s"
+                                                repeatCount="indefinite" />
+                                        </circle>
+                                        <circle cx="243" cy="108" r="2" fill="#ff8800" opacity="0.6">
+                                            <animate attributeName="cy" values="108;100;108" dur="0.9s"
+                                                repeatCount="indefinite" />
+                                            <animate attributeName="opacity" values="0.6;0.1;0.6" dur="0.9s"
+                                                repeatCount="indefinite" />
+                                        </circle>
+                                        <circle cx="235" cy="115" r="1.5" fill="#ffcc00" opacity="0.8">
+                                            <animate attributeName="cy" values="115;106;115" dur="1s"
+                                                repeatCount="indefinite" />
+                                        </circle>
+                                    </g>
+                                </g>
+                            </g>
+                            <g id="cakeSparkles" opacity="0"><text x="40" y="100" font-size="18" opacity="0">
+                                    <animate attributeName="opacity" values="0;1;0" dur="1.5s" begin="0s"
+                                        repeatCount="indefinite" />✨
+                                </text><text x="50" y="200" font-size="14" opacity="0">
+                                    <animate attributeName="opacity" values="0;1;0" dur="1.3s" begin="0.6s"
+                                        repeatCount="indefinite" />💫
+                                </text><text x="295" y="210" font-size="15" opacity="0">
+                                    <animate attributeName="opacity" values="0;1;0" dur="1.6s" begin="0.9s"
+                                        repeatCount="indefinite" />⭐
+                                </text></g>
+                        </svg>
+                        <div id="cakeCutMsg" class="cake-cut-msg">🎉 You cut the cake! Happy Birthday Little Snorlax!
+                            🎂💖</div>
+                    </div>
+                    <div class="cut-progress-wrap" id="cutProgressWrap" style="display:none">
+                        <div class="cut-progress-bar" id="cutProgressBar"></div>
+                    </div>
+                    <div class="cake-hint" id="cakeHint">🔪 Press &amp; drag the cake in any direction to cut it!</div>
+                    <div class="age-badge">🎀 20 Years of Pure Magic 🎀</div>
+                </div>
+                <div class="fc-video-wrap" id="fcVideoWrap">
+                    <div class="fc-video-label">🎇 Celebration Time!</div><video poster="image/background/lock_back.png"
+                        preload="metadata" id="p3fcVideo" class="fc-video" src="image/Fire craker.mp4"
+                        playsinline></video>
+                </div>
+            </div>
+            <div
+                style="display:flex;gap:32px;margin-top:35px;margin-bottom:25px;justify-content:center;align-items:center;flex-wrap:wrap;width:100%">
+                <div class="center-photo-frame"
+                    style="width:170px;height:170px;padding:6px;animation:floatCard 3.6s ease-in-out infinite;border-radius:18px">
+                    <img loading="lazy" src="image/gif/Gif1.gif" alt="Cute Birthday Anim"
+                        style="width:100%;height:100%;object-fit:cover;border-radius:14px">
+                </div>
+                <div class="center-photo-frame"
+                    style="width:170px;height:170px;padding:6px;animation:floatCard 4s ease-in-out infinite;animation-delay:.6s;border-radius:18px">
+                    <img loading="lazy" src="image/gif/gif4.gif" alt="Cute Birthday Pic"
+                        style="width:100%;height:100%;object-fit:cover;border-radius:14px">
+                </div>
+                <div
+                    style="margin-top:28px;display:flex;justify-content:center;animation:floatCard 3.5s ease-in-out infinite">
+                    <img loading="lazy" src="image/gif/gif6.gif" alt="Cute Bear Animation"
+                        style="width:100%;max-width:180px;filter:drop-shadow(0 8px 24px rgba(255, 110, 180, .35));border-radius:16px">
+                </div>
+            </div>
+            <div class="p3-final">
+                <div class="p3-final-msg">💖 Twenty looks absolutely perfect on you.<br>Here's to more smiles, more
+                    adventures. 😉🎂</div><button aria-label="Button" class="btn-p3-back" onclick="goBackToPage2()">← Go
+                    Back to Surprise Page 🌸</button> <button aria-label="Button" class="btn-p3-next"
+                    id="finalSurpriseBtn" onclick="openFinalSurprise()">Go to Next Surprise Page 🎁 →</button>
+            </div>
+        </div>
+        <div class="p3-footer">This WebSide Made only For You 💖, Little Snorlax ~ Happy 20th Birthday 🎂</div>
+    </div>
+    <div id="page-four" class="page"><video poster="image/background/lock_back.png" id="p4BgVid" preload="metadata" loop
+            muted playsinline style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1">
+            <source src="image/background/back_1.mp4" type="video/mp4">
+        </video>
+        <div class="p4-header">
+            <h1 class="p4-title">The Grand Finale 💖</h1>
+            <p class="p4-subtitle">🌸 ~ You're One Of My Favorite person In This World ~ ✨🥹</p>
+        </div>
+        <div class="p4-body">
+            <div class="polaroid-gallery-wrap">
+                <h2 class="memory-title">🌸 Cute Funny Video 🌸</h2>
+                <div class="polaroid-string"></div>
+                <div class="polaroids-container">
+                    <div class="polaroid-card">
+                        <div class="polaroid-img-wrap"><video poster="image/background/lock_back.png" preload="metadata"
+                                id="p4Video1" class="polaroid-video" src="video/Video2.mp4" playsinline></video>
+                            <div class="video-play-overlay">▶</div>
+                        </div>
+                        <div class="polaroid-caption">Side effects of loving you include uncontrolled smiling! 🐰💗
+                        </div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-img-wrap"><video poster="image/background/lock_back.png" preload="metadata"
+                                id="p4Video2" class="polaroid-video" src="video/Video3.mp4" playsinline></video>
+                            <div class="video-play-overlay">▶</div>
+                        </div>
+                        <div class="polaroid-caption">My heart doing a silly happy dance when I think of you 🐧✨</div>
+                    </div>
+                    <div class="polaroid-card">
+                        <div class="polaroid-img-wrap"><video poster="image/background/lock_back.png" preload="metadata"
+                                id="p4Video3" class="polaroid-video" src="video/video4.mp4" playsinline></video>
+                            <div class="video-play-overlay">▶</div>
+                        </div>
+                        <div class="polaroid-caption">Happy 20th Birthday to the most adorable and special human in the
+                            universe! 🎂💚</div>
+                    </div>
+                </div>
+            </div>
+            <div
+                style="display:flex;flex-direction:row;gap:40px;align-items:center;justify-content:center;flex-wrap:wrap;width:100%;max-width:900px;margin-top:20px">
+                <div class="center-photo-frame"
+                    style="margin-top:28px;display:flex;justify-content:center;animation:floatCard 3.5s ease-in-out infinite">
+                    <img loading="lazy" src="image/gif/gif5.gif" alt="Cute Bear Animation"
+                        style="width:100%;max-width:180px;filter:drop-shadow(0 8px 24px rgba(255, 110, 180, .35));border-radius:16px">
+                </div>
+                <div class="wishing-well-wrap" style="flex:1;min-width:320px;margin:0">
+                    <h2 class="well-title">✨ Magic Wishing Well ✨</h2>
+                    <p class="well-desc">Close your eyes, make a silent wish, and drop it in the wishing well. The stars
+                        will keep your secret forever... 💕</p><iframe name="wish_submit_iframe" id="wish_submit_iframe"
+                        style="display:none"></iframe>
+                    <form class="well-form" id="wishForm"
+                        action="https://script.google.com/macros/s/AKfycbzQtCgasuRkI22_yIl_84ZqtrP0T_pdfiwaDIGi9BnmNZNnuL2QR-7KU9LGJUOURUl7/exec"
+                        method="POST" target="wish_submit_iframe" onsubmit="submitMagicWish(event)"><textarea
+                            class="well-textarea" name="wish" id="wishText"
+                            placeholder="Write your secret wish here, cutie... 🌸" required></textarea> <button
+                            aria-label="Button" type="submit" class="btn-well-send">Send to the Stars ✨</button></form>
+                </div>
+            </div>
+            <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;justify-content:center"><button
+                    aria-label="Button" class="btn-p3-back" onclick="goBackToPage3()">← Go Back to Cake Page 🎂</button>
+                <button aria-label="Button" class="btn-p3-back"
+                    style="background:linear-gradient(135deg,#ff6eb4 0,#e91e8c 100%);color:#fff;border:none;box-shadow:0 8px 28px rgba(233,30,140,.35)"
+                    onclick="openThanksModal()">💝 Message For You~ ✨</button> <button aria-label="Button"
+                    class="btn-p3-back"
+                    style="background:linear-gradient(135deg,#a78bfa 0,#8b5cf6 100%);color:#fff;border:none;box-shadow:0 8px 28px rgba(139,92,246,.35)"
+                    onclick="goToLockPage()">🔒 Go back to Lock Page</button>
+            </div>
+        </div>
+        <div class="p4-footer">Made with infinite love 💖 ~ Happy 20th Birthday 🌸</div>
+    </div>
+    <div class="magic-wish-overlay" id="wishOverlay"><canvas class="magic-stars-canvas" id="starsCanvas"></canvas>
+        <div class="magic-wish-content">
+            <div class="magic-wish-title">✨ Wish Granted! ✨</div>
+            <div class="magic-wish-text" id="grantedWishText">"Your beautiful wish has been carried by the shooting
+                stars to the highest heavens. May all your dreams and wishes blossom into reality, cutie Snorlax! 💖"
+            </div>
+            <button aria-label="Button" class="btn-magic-close" onclick="closeWishOverlay()">Close & Return 🌸</button>
+        </div>
+    </div>
+    <div class="modal-overlay" id="loveLetterModal" onclick="closeLoveLetter(event)"><img loading="lazy" width="800"
+            height="600" id="p5BgVid" src="image/background/back_2_poster.jpg"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1" alt="background">
+        <div class="love-letter-card" id="loveLetterCard"><button class="letter-close" onclick="closeLoveLetterDirect()"
+                aria-label="Close">✕</button>
+            <div class="letter-top-deco">💌</div>
+            <h2 class="letter-heading">A Letter From My Heart</h2>
+            <p class="letter-sub">~ Written with all the love in the universe just for you ~</p>
+            <hr class="letter-divider">
+            <ul class="wish-list">
+                <li class="wish-item">💝 Happy Birthday, Little Snorlax! On this beautiful day, I want you to know that
+                    you are
+                    the most magical person I've meet you. 🎂✨</li>
+                <li class="wish-item">💝Some people make the world beautiful. You just happen to be one of them.🌹</li>
+                <li class="wish-item">🌸 Your smile has a way of making everything around you feel lighter. I hope your
+                    birthday is just as wonderful as you are. ❤️✨</li>
+                <li class="wish-item">🌸 Your laugh is my favorite sound. It has a way of turning ordinary moments into
+                    something unforgettable. 💕<br>"শাকচুন্নি স্টাইল হাসি 🥲"</li>
+                <li class="wish-item">💕 No matter what life brings, I hope you always remember how special, capable,
+                    and deeply cherished you are. 🌹</li>
+                <li class="wish-item">"I don't know what this feeling is yet... but I know I smile a lot because of you.
+                    🥹❤️"</li>
+                <li class="wish-item">"Every time I see your name pop up, my mood instantly gets better. ❤️"</li>
+                <li class="wish-item">I keep finding little reasons to text you... maybe that's saying something. 😉❤️
+                </li>
+                <li class="wish-item">🍰 On your 20th birthday, I wish you a life so full of joy that you never have a
+                    reason to stop smiling. You deserve it all, my friend! 🎉🌈</li>
+                <li class="wish-item">💌 No matter how many birthdays pass, I hope your heart always stays as beautiful
+                    as it is today. Happy Birthday! 🌹</li>
+                <li class="wish-item">🎂 Today is a wonderful day to celebrate you, your journey, and the beautiful soul
+                    you are. I'm so lucky to know you and witness your story unfold. Keep shining bright, my friend!
+                    💖<br><br><strong>With love and endless wishes,</strong> 💕<br><strong>Your friend (Ankit
+                        💗)</strong> 💌</li>
+            </ul>
+            <div class="letter-sign">With all my love, always~ 💕</div>
+            <div class="letter-final-hearts">💗 💓 💗 💓 💗 💓 💗</div>
+        </div>
+    </div>
+    <div class="modal-overlay" id="thanksModal" onclick="closeThanksModal(event)"><img loading="lazy" width="800"
+            height="600" id="p6BgVid" src="image/background/back_5_poster.jpg"
+            style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:-1" alt="background">
+        <div class="love-letter-card" id="thanksCard" style="max-width:440px"><button class="letter-close"
+                onclick="closeThanksModalDirect()" aria-label="Close">✕</button>
+            <div class="letter-top-deco">💝</div>
+            <h2 class="letter-heading" style="font-family:Pacifico,cursive;font-size:2rem">Thank You, Snorlax!</h2>
+            <p class="letter-sub" style="font-family:Nunito,sans-serif;font-size:.9rem;font-weight:700">~ A special
+                message just for you ~</p>
+            <hr class="letter-divider">
+            <div class="thanks-message-content"
+                style="font-family:Nunito,sans-serif;font-size:.98rem;color:#7b3f6e;line-height:1.8;text-align:center;font-weight:600">
+                <p style="margin-bottom:14px">Thank you so much for spending your valuable time to view my webpage! I
+                    know your time is extremely precious. 🌸✨</p>
+                <p style="margin-bottom:14px">I built this website only for you to celebrate your special day. 💖</p>
+                <p style="margin-bottom:14px">খাওয়াতে যেন ভুলবি না। 😁</p>
+                <p style="font-size:1.15rem;color:var(--pink-deep);font-weight:800;margin-top:18px">Thank you and Happy
+                    Birthday! 🎂💝🎉</p>
+                <div
+                    style="background:rgba(255,255,255,.95);border:2.5px dashed #ff1493;border-radius:18px;padding:18px 20px;margin-top:24px;box-shadow:0 6px 20px rgba(255,20,147,.3);animation:floatCard 3.5s ease-in-out infinite">
+                    <p
+                        style="font-family:Nunito,sans-serif;font-size:1.1rem;color:#e91e8c;font-weight:900;margin:0;line-height:1.5;text-shadow:0 1px 3px rgba(255,20,147,.2)">
+                        Good Night, cutieeee /Little Snorlax 🌙 Sweet Dreams! 😍❤️<br>With love, always. 💕</p>
+                </div>
+            </div>
+            <div class="letter-sign" style="font-family:'Dancing Script',cursive">With all love~ 💕</div>
+            <div class="letter-final-hearts">💗 💓 💗 💓 💗 💓 💗</div>
+        </div>
+    </div>
+    <script defer="defer" src="script.min.js"></script>
+</body>
+
+</html>
